@@ -1,24 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeWork12_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EKN-VG-VZ3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NrU-zl-BSx" appends="YES" id="f2J-4c-oTA"/>
+                                </connections>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xVA-Wx-sjD">
+                                <rect key="frame" x="20" y="665.5" width="374" height="176.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Площадь:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzX-ci-hhN">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="85" minValue="20" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="vTk-3q-Uyk">
+                                        <rect key="frame" x="-2" y="25.5" width="378" height="31"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="sSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3bh-4o-AL4"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество комнат:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqM-Js-gJi">
+                                        <rect key="frame" x="0.0" y="60.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="cL9-ek-ntv">
+                                        <rect key="frame" x="-2" y="86" width="378" height="31"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="rSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="hGi-Uz-tiV"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Этаж:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pz-3S-UBA">
+                                        <rect key="frame" x="0.0" y="121" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="11" minValue="1" maxValue="21" translatesAutoresizingMaskIntoConstraints="NO" id="TzK-Ku-p3M">
+                                        <rect key="frame" x="-2" y="146.5" width="378" height="31"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="fSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Eb-tk-odd"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176.5" id="BFW-tt-ttl"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9K-VD-y8Z">
+                                <rect key="frame" x="20" y="44" width="374" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="rVs-tW-m9j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xVA-Wx-sjD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="41j-aa-nZa"/>
+                            <constraint firstAttribute="trailing" secondItem="xVA-Wx-sjD" secondAttribute="trailing" constant="20" id="EXh-Gm-t74"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i9K-VD-y8Z" secondAttribute="trailing" constant="20" id="G2v-eb-cuA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xVA-Wx-sjD" secondAttribute="bottom" constant="20" id="M2u-nJ-RHU"/>
+                            <constraint firstItem="i9K-VD-y8Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RRI-no-Dip"/>
+                            <constraint firstItem="EKN-VG-VZ3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rz2-Wf-QWR"/>
+                            <constraint firstItem="EKN-VG-VZ3" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="cD9-nM-T8Y"/>
+                            <constraint firstItem="EKN-VG-VZ3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="f5q-x4-NGe"/>
+                            <constraint firstItem="i9K-VD-y8Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="gzi-68-J3e"/>
+                            <constraint firstItem="EKN-VG-VZ3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jna-Oy-wlx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fLabel" destination="8pz-3S-UBA" id="IbK-Gs-G3y"/>
+                        <outlet property="fSlider" destination="TzK-Ku-p3M" id="NDO-a1-SSO"/>
+                        <outlet property="longPressRecognition" destination="NrU-zl-BSx" id="jVz-U7-B85"/>
+                        <outlet property="map" destination="EKN-VG-VZ3" id="wgh-ms-XGi"/>
+                        <outlet property="priceLabel" destination="i9K-VD-y8Z" id="0pg-yl-sCp"/>
+                        <outlet property="rLabel" destination="SqM-Js-gJi" id="bo0-wT-63S"/>
+                        <outlet property="rSlider" destination="cL9-ek-ntv" id="1LF-sQ-b2U"/>
+                        <outlet property="sLabel" destination="nzX-ci-hhN" id="zeV-gj-d3g"/>
+                        <outlet property="sSlider" destination="vTk-3q-Uyk" id="hpd-7A-Xg6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="NrU-zl-BSx">
+                    <connections>
+                        <action selector="longPress:" destination="BYZ-38-t0r" id="VNy-HT-XKK"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-146.37681159420291" y="-37.5"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
